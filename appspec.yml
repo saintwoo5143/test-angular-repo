@@ -1,0 +1,19 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /
+    destination: /var/www/my-angular-project
+
+permissions:
+  - object: /var/www/my-angular-project
+    pattern: "**"
+    owner: ec2-user
+    group: ec2-user
+    mode: 755
+
+hooks:
+  ApplicationStart:
+    - location: deploy-scripts/application-start-hooks.sh
+      timeout: 300
+      runas: root
