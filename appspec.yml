@@ -11,9 +11,3 @@ permissions:
     owner: ec2-user
     group: ec2-user
     mode: 755
-
-hooks:
-  ApplicationStart:
-    - location: deploy-scripts/application-start-hooks.sh
-      timeout: 300
-      runas: root
